@@ -2,7 +2,7 @@
 <html lang="en-US">
 
 <head>
-	<title>Punch Card</title>
+	<title>Andy's Electric Train</title>
 	<meta charset="UTF-8" />
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=PT+Mono&display=swap');
@@ -20,19 +20,10 @@
 			border-image: url(negativeBezelBorder.png) 62 round;
 		}
 
-		#container {
-			width: 70vw;
-			margin: auto;
-		}
-
 		h1 {
 			text-align: center;
-			font-size: 10vw;
 			font-family: 'PT Mono', monospace;
-		}
-
-		span {
-			text-align: center;
+			width: 100%;
 		}
 
 		button {
@@ -46,10 +37,32 @@
 			font-size: 4vw;
 			font-family: 'PT Mono', monospace;
 		}
+
+		object {
+			width: 100%;
+		}
+
+		aside {
+			font-size: .5em;
+		}
 	</style>
 </head>
 
 <body>
+	<header>
+		<object data="train_logo.svg" type="image/svg+xml"></object>
+		<h1>Andy's Electric Train</h1>
+	</header>
+	<main>
+		<a href="https://build.phonegap.com/apps/3844339/share"><button>Download Our Punch Card App!</button></a>
+		<br />
+		<br />
+		<br />
+		<aside>If you don't want to download the app, you can use the online punch card <a>here.</a>
+			<br />however, if you clear your cookies you will lose all your punches. They can not be recovered!</aside>
+		<p>Come visit us downstairs at The Shops at South Town located at 10450 S. State Street, Sandy, UT 84070
+		</p>
+	</main>
 </body>
 
 </html>
