@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<title>Punch Card</title>
+	<meta charset="UTF-8" />
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=PT+Mono&display=swap');
+
+		html {
+			margin: 2vw;
+			border: 60px solid transparent;
+			padding: 0;
+			background-color: #3066be;
+			font-size: 2em;
+			color: white;
+			font-family: 'PT Mono', monospace;
+			min-height: 90vh;
+			text-align: center;
+			border-image: url(negativeBezelBorder.png) 62 round;
+		}
+
+		#container {
+			width: 70vw;
+			margin: auto;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 10vw;
+			font-family: 'PT Mono', monospace;
+		}
+
+		span {
+			text-align: center;
+		}
+
+		button {
+			background-color: white;
+			border: none;
+			color: #3066be;
+			padding: 1vw 2vw;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 4vw;
+			font-family: 'PT Mono', monospace;
+		}
+	</style>
+</head>
+
+<body>
+	<script>
+		document.write("<h1>Andy's Electric Train</h1><div id='container'><hr/>")
+		var addPunch;
+		var punches = localStorage.getItem('punches');
+		if (punches == null || punches == undefined) {
+			punches = 0;
+		}
+		var i;
+		document.write("<span>");
+		for (i = parseFloat(punches); i > 0; i--) {
+			document.write("🚂 ");
+			/*if(i == 6){
+				document.write("<br/>");
+			}
+			if(i == 11){
+				document.write("<br/>");
+			}*/
+		}
+		document.write("</span><hr/>");
+		if (parseFloat(punches) >= 9) {
+			if (parseFloat(punches) >= 18) {
+				var freeRides = Math.floor(punches / 9) + " ";
+				var plural = "S";
+			} else {
+				var freeRides = "";
+				var plural = "";
+			}
+			document.write("<br/>" + freeRides + "FREE RIDE" + plural +
+			"!<br/><br/><button onclick='claim()'>Claim</button>   ");
+		}
+		document.write("<button onclick='addPunch()'>Add Punch</button><br/><br/>")
+
+		function addPunch() {
+			var password = prompt("Employee ID:", "*****");
+			if (password == "Aet20") {
+				addPunch = prompt("How many riders?", 1);
+				punches = parseFloat(addPunch) + parseFloat(punches);
+				localStorage.setItem('punches', punches);
+				//alert(punches);
+				location.reload();
+			} else {
+				alert("Wrong password!");
+			}
+		}
+
+		function claim() {
+			var password = prompt("Employee ID:", "*****");
+			if (password == "Aet20") {
+				if (confirm("Are you sure?")) {
+					punches = parseFloat(punches) - 9;
+					localStorage.setItem('punches', punches);
+					//alert(punches);
+					location.reload();
+				}
+			} else {
+				alert("Wrong password!");
+			}
+		}
+		document.write("</div>")
+	</script>
+</body>
+
+</html>
