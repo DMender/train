@@ -7,6 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <style>
     div {
+      background-color: grey;
       margin: auto;
       border: 3px solid black;
       border-radius: 7px;
@@ -24,6 +25,7 @@
 </div>
 <script>
   $(document).ready(function(){
+    $("#sugar").focus();
   $("#sugar").focusout(function(){
     var bsugar = $("#sugar").val();
     var results = (bsugar - 140) / 15;
