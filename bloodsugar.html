@@ -8,13 +8,13 @@
 </head>
 <body>
 <input id="sugar">
-<div id="dose"></div>
+<div id="dose">dose: </div>
 <script>
   $(document).ready(function(){
   $("#sugar").focusout(function(){
-    var bsugar = $("#sugar).val();
+    var bsugar = $("#sugar").val();
     var results = (bsugar - 140) / 15;
-    $(#dose).text(results);
+    $("#dose").text("dose: "+results);
   });
 });
 </script>
