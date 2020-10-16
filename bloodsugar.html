@@ -5,10 +5,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    div {
+      margin: auto;
+      border: 3px solid black;
+      border-radius: 7px;
+    }
+    input, span {
+      margin: auto;
+    }
+  </style>
 </head>
 <body>
+<div>
 <input id="sugar">
-<div id="dose">dose: </div>
+<span id="dose">dose: </span>
+</div>
 <script>
   $(document).ready(function(){
   $("#sugar").focusout(function(){
